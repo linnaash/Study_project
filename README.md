@@ -1,4 +1,6 @@
 # Study_project
+[![Build Status](https://github.com/linnaash/Study_project/workflows/CI/badge.svg)](https://github.com/linnaash/Study_project/actions)
+
  Индивидуальный проект по теме: "Разработка и администрирование базы данных для системы управления мероприятиями и событиями в культурном центре"
  ___
 
