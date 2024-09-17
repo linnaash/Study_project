@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0amVVPi1vn8zGufvj1pGppCCS/3cauGW2+GjtdQjW4KB6v3oIOt3lJxjPIMRjYwadC2n1II314FTtGMwHqa8SA==",
+  "dgSpecHash": "sL0QQEgdrY/k/LJmDbqMuhKFD29NlmKqhB+tYKfW2znmK/ChLnUgT2R5tlibrM5bYD/PeVbXbcoYXbxn03zGPg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mvm\\source\\repos\\Cultura\\BusinessLogic\\BusinessLogic.csproj",
+  "projectFilePath": "C:\\Users\\mvm\\OneDrive\\Рабочий стол\\Учеба\\ларионов\\Study_project\\Cultura\\BusinessLogic\\BusinessLogic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mvm\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\mvm\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

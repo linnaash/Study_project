@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "n9kSw5rYaP50ao/ai+i+Q4En+1oE6+9BlEiiMklN0JEsZAvwcjg4csmleDXa3NGIu6yyuJ9huqJTc5TBhoMMtw==",
+  "dgSpecHash": "xGbMy3fCr3EcsoTGB0P/TkCx8scGlEU3mcgHEnGWUPCsxXYEIe73t++hR0qRUtHaztkLDH9SvX2R4LVsllCv1Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mvm\\source\\repos\\Cultura\\DataAccess\\DataAccess.csproj",
+  "projectFilePath": "C:\\Users\\mvm\\OneDrive\\Рабочий стол\\Учеба\\ларионов\\Study_project\\Cultura\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mvm\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\mvm\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

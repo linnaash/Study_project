@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bvOhcT3dMyUJLG5DZ/qtcb8qnqdt1kFbeHLWMHtz+cBx57PR6oHJww47lCxOhvJzDDQ6kLYqcQmwPHnO7Dpv8A==",
+  "dgSpecHash": "zT3vvTQ2adN1ZcyGXAXLRqtwMLRMQ7goDldzRFwRQyOTWr7GZ0qUcGzGrPOZgWENuG5/VvuD7D0kOxpQDjtcuA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mvm\\source\\repos\\Cultura\\Cultura\\Cultura.csproj",
+  "projectFilePath": "C:\\Users\\mvm\\OneDrive\\Рабочий стол\\Учеба\\ларионов\\Study_project\\Cultura\\Cultura\\Cultura.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mvm\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\mvm\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
