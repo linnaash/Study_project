@@ -1,8 +1,11 @@
-using BusinessLogic.Interfaces;
 using BusinessLogic.Services;
-using DataAccess.Models;
+using Domain.Models;
+using Domain.Interfaces;
 using DataAccess.Wrapper;
 using Microsoft.EntityFrameworkCore;
+using System.Xml.Linq;
+using System;
+using System.Reflection;
 
 namespace Cultura
 {
@@ -14,8 +17,12 @@ namespace Cultura
 
             // Add services to the container.
 
-            builder.Services.AddDbContext<Cultura_bdContext>(optionsAction: options => options.UseSqlServer(
-                "Server=DESKTOP-HD64L82;Database=Cultura_bd;User Id=AdminLogin;Password=12345;"));
+            builder.Services.AddDbContext<Cultura_bdContext>(options =>
+            options.UseSqlServer(
+         "Server=DESKTOP-HD64L82;Database=Cultura_bd_new1;User Id=AdminLogin;Password=12345;",
+         b => b.MigrationsAssembly("DataAccess")));
+
+
 
             builder.Services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
             builder.Services.AddScoped<IUserService, UserService>();
@@ -23,7 +30,32 @@ namespace Cultura
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Культурный центр API",
+                    Description = "API для управления сотрудниками, отделами и мероприятиями культурного центра. Предоставляет функционал для создания," +
+                    "обновления, удаления и получения данных.",
+                    Contact = new Microsoft.OpenApi.Models.OpenApiContact
+                    {
+                        Name = "Администрация культурного центра",
+                        Url = new Uri("https://cultura.com/contact")
+                    },
+                    License = new Microsoft.OpenApi.Models.OpenApiLicense
+                    {
+
+                        Name = "Лицензия на использование API",
+                        Url = new Uri("https://cultura.com/license")
+
+                    }
+                });
+
+            
+             var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+             options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+            });
 
             var app = builder.Build();
 

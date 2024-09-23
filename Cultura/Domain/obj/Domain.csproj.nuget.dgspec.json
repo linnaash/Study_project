@@ -45,6 +45,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Mapster": {
+              "target": "Package",
+              "version": "[7.4.0, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[6.0.33, )"
@@ -54,6 +58,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.33, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.7.3, )"
             }
           },
           "imports": [

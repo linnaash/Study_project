@@ -1,5 +1,7 @@
-﻿using BusinessLogic.Interfaces;
-using DataAccess.Models;
+﻿using Cultura.Contracts.Employee;
+using Domain.Interfaces;
+using Domain.Models;
+using Mapster;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,28 +16,65 @@ namespace Cultura.Controllers
         { 
             _userService = userService;
         }
+        /// <summary>
+        /// Возвращает список всех пользователей.
+        /// </summary>
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             return Ok(await _userService.GetAll());
         }
+        /// <summary>
+        /// Возвращает данные пользователя по его уникальному идентификатору (ID).
+        /// </summary>
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            return Ok(await _userService.GetById(id));
+            var result=await _userService.GetById(id);
+            var response = result.Adapt<GetUserResponse>();
+ 
+            return Ok(response);
         }
+        /// <summary>
+        ///Создает нового пользователя на основе предоставленных данных.
+        /// </summary>
+        /// <remarks>
+        /// Пример запроса:
+        /// 
+        ///     POST /Todo
+        ///     {
+        ///         "FirstName" : "Natalia",
+        ///         "LastName" : "Smirnova",
+        ///         "DepartmentId" : "1"
+        ///     }
+        /// 
+        /// </remarks>
+        /// <param name="model">Пользователь</param>
+        /// <returns></returns>
+
+        // POST api/<UsersController>
+
         [HttpPost]
-        public async Task<IActionResult> Add(Employee employee)
+        public async Task<IActionResult> Add(CreateOrUpdateUserRequest request)
         {
-            await _userService.Create(employee);
+            var userDto = request.Adapt<Employee>();
+            await _userService.Create(userDto);
             return Ok();
         }
+
+        /// <summary>
+        /// Обновляет данные существующего пользователя.
+        /// </summary>
         [HttpPut]
-        public async Task<IActionResult> Update(Employee employee)
+        public async Task<IActionResult> Update(CreateOrUpdateUserRequest request)
         {
-            await _userService.Update(employee);
+            var userDto = request.Adapt<Employee>();
+            await _userService.Update(userDto);
             return Ok();
         }
+        /// <summary>
+        /// Удаляет пользователя по его ID.
+        /// </summary>
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {

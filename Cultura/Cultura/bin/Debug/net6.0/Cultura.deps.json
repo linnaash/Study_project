@@ -9,6 +9,7 @@
       "Cultura/1.0.0": {
         "dependencies": {
           "BusinessLogic": "1.0.0",
+          "DataAccess": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.33",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.33",
           "Swashbuckle.AspNetCore": "6.5.0"
@@ -495,7 +496,7 @@
       },
       "BusinessLogic/1.0.0": {
         "dependencies": {
-          "DataAccess": "1.0.0",
+          "Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.33"
         },
         "runtime": {
@@ -504,10 +505,19 @@
       },
       "DataAccess/1.0.0": {
         "dependencies": {
+          "Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.33"
         },
         "runtime": {
           "DataAccess.dll": {}
+        }
+      },
+      "Domain/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.33"
+        },
+        "runtime": {
+          "Domain.dll": {}
         }
       }
     }
@@ -867,6 +877,11 @@
       "sha512": ""
     },
     "DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -15,6 +15,27 @@
           }
         }
       },
+      "Mapster/7.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Mapster.Core": "1.2.1"
+        },
+        "compile": {
+          "lib/net6.0/Mapster.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Mapster.dll": {}
+        }
+      },
+      "Mapster.Core/1.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Mapster.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Mapster.Core.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.5.0": {
         "type": "package",
         "compile": {
@@ -467,7 +488,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.OpenApi/1.2.3": {
+      "Microsoft.OpenApi/1.6.14": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {
@@ -529,22 +550,22 @@
           }
         }
       },
-      "Swashbuckle.AspNetCore/6.5.0": {
+      "Swashbuckle.AspNetCore/6.7.3": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.ApiDescription.Server": "6.0.5",
-          "Swashbuckle.AspNetCore.Swagger": "6.5.0",
-          "Swashbuckle.AspNetCore.SwaggerGen": "6.5.0",
-          "Swashbuckle.AspNetCore.SwaggerUI": "6.5.0"
+          "Swashbuckle.AspNetCore.Swagger": "6.7.3",
+          "Swashbuckle.AspNetCore.SwaggerGen": "6.7.3",
+          "Swashbuckle.AspNetCore.SwaggerUI": "6.7.3"
         },
         "build": {
           "build/Swashbuckle.AspNetCore.props": {}
         }
       },
-      "Swashbuckle.AspNetCore.Swagger/6.5.0": {
+      "Swashbuckle.AspNetCore.Swagger/6.7.3": {
         "type": "package",
         "dependencies": {
-          "Microsoft.OpenApi": "1.2.3"
+          "Microsoft.OpenApi": "1.6.14"
         },
         "compile": {
           "lib/net6.0/Swashbuckle.AspNetCore.Swagger.dll": {
@@ -560,10 +581,10 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "Swashbuckle.AspNetCore.SwaggerGen/6.5.0": {
+      "Swashbuckle.AspNetCore.SwaggerGen/6.7.3": {
         "type": "package",
         "dependencies": {
-          "Swashbuckle.AspNetCore.Swagger": "6.5.0"
+          "Swashbuckle.AspNetCore.Swagger": "6.7.3"
         },
         "compile": {
           "lib/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {
@@ -576,7 +597,7 @@
           }
         }
       },
-      "Swashbuckle.AspNetCore.SwaggerUI/6.5.0": {
+      "Swashbuckle.AspNetCore.SwaggerUI/6.7.3": {
         "type": "package",
         "compile": {
           "lib/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
@@ -874,8 +895,10 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "DataAccess": "1.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.33"
+          "Domain": "1.0.0",
+          "Mapster": "7.4.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.33",
+          "Swashbuckle.AspNetCore": "6.7.3"
         },
         "compile": {
           "bin/placeholder/BusinessLogic.dll": {}
@@ -888,13 +911,31 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.33"
+          "Domain": "1.0.0",
+          "Mapster": "7.4.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.33",
+          "Swashbuckle.AspNetCore": "6.7.3"
         },
         "compile": {
           "bin/placeholder/DataAccess.dll": {}
         },
         "runtime": {
           "bin/placeholder/DataAccess.dll": {}
+        }
+      },
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Mapster": "7.4.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.33",
+          "Swashbuckle.AspNetCore": "6.7.3"
+        },
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
         }
       }
     }
@@ -914,6 +955,34 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "Mapster/7.4.0": {
+      "sha512": "RYGoDqvS4WTKIq0HDyPBBVIj6N0mluOCXQ1Vk95JKseMHEsbCXSEGKSlP95oL+s42IXAXbqvHj7p0YaRBUcfqg==",
+      "type": "package",
+      "path": "mapster/7.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net6.0/Mapster.dll",
+        "lib/net7.0/Mapster.dll",
+        "mapster.7.4.0.nupkg.sha512",
+        "mapster.nuspec"
+      ]
+    },
+    "Mapster.Core/1.2.1": {
+      "sha512": "11lokmfliBEMMmjeqxFGNpqGXq6tN96zFqpBmfYeahr4Ybk63oDmeJmOflsATjobYkX248g5Y62oQ2NNnZaeww==",
+      "type": "package",
+      "path": "mapster.core/1.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net6.0/Mapster.Core.dll",
+        "lib/net7.0/Mapster.Core.dll",
+        "mapster.core.1.2.1.nupkg.sha512",
+        "mapster.core.nuspec"
       ]
     },
     "Microsoft.CSharp/4.5.0": {
@@ -1789,20 +1858,18 @@
         "version.txt"
       ]
     },
-    "Microsoft.OpenApi/1.2.3": {
-      "sha512": "Nug3rO+7Kl5/SBAadzSMAVgqDlfGjJZ0GenQrLywJ84XGKO0uRqkunz5Wyl0SDwcR71bAATXvSdbdzPrYRYKGw==",
+    "Microsoft.OpenApi/1.6.14": {
+      "sha512": "tTaBT8qjk3xINfESyOPE2rIellPvB7qpVqiWiyA/lACVvz+xOGiXhFUfohcx82NLbi5avzLW0lx+s6oAqQijfw==",
       "type": "package",
-      "path": "microsoft.openapi/1.2.3",
+      "path": "microsoft.openapi/1.6.14",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/net46/Microsoft.OpenApi.dll",
-        "lib/net46/Microsoft.OpenApi.pdb",
-        "lib/net46/Microsoft.OpenApi.xml",
+        "README.md",
         "lib/netstandard2.0/Microsoft.OpenApi.dll",
         "lib/netstandard2.0/Microsoft.OpenApi.pdb",
         "lib/netstandard2.0/Microsoft.OpenApi.xml",
-        "microsoft.openapi.1.2.3.nupkg.sha512",
+        "microsoft.openapi.1.6.14.nupkg.sha512",
         "microsoft.openapi.nuspec"
       ]
     },
@@ -1882,22 +1949,22 @@
         "version.txt"
       ]
     },
-    "Swashbuckle.AspNetCore/6.5.0": {
-      "sha512": "FK05XokgjgwlCI6wCT+D4/abtQkL1X1/B9Oas6uIwHFmYrIO9WUD5aLC9IzMs9GnHfUXOtXZ2S43gN1mhs5+aA==",
+    "Swashbuckle.AspNetCore/6.7.3": {
+      "sha512": "PYTm/M5YrkEUHmguhj6vF1DshG2deKMMcsnhKet1BkcKzZHNX/VVQady0T/jNpXrtxhLR3vB10hWhONF1Nbglw==",
       "type": "package",
-      "path": "swashbuckle.aspnetcore/6.5.0",
+      "path": "swashbuckle.aspnetcore/6.7.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "build/Swashbuckle.AspNetCore.props",
-        "swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+        "swashbuckle.aspnetcore.6.7.3.nupkg.sha512",
         "swashbuckle.aspnetcore.nuspec"
       ]
     },
-    "Swashbuckle.AspNetCore.Swagger/6.5.0": {
-      "sha512": "XWmCmqyFmoItXKFsQSwQbEAsjDKcxlNf1l+/Ki42hcb6LjKL8m5Db69OTvz5vLonMSRntYO1XLqz0OP+n3vKnA==",
+    "Swashbuckle.AspNetCore.Swagger/6.7.3": {
+      "sha512": "plNVrOpup/UCIP0aSE5cznIzXMC17EOOqIceWqhP829evEAUwTomCc+1TPy2xK2E+OilYcYEdUus3rOUMjjm/g==",
       "type": "package",
-      "path": "swashbuckle.aspnetcore.swagger/6.5.0",
+      "path": "swashbuckle.aspnetcore.swagger/6.7.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1910,20 +1977,24 @@
         "lib/net7.0/Swashbuckle.AspNetCore.Swagger.dll",
         "lib/net7.0/Swashbuckle.AspNetCore.Swagger.pdb",
         "lib/net7.0/Swashbuckle.AspNetCore.Swagger.xml",
+        "lib/net8.0/Swashbuckle.AspNetCore.Swagger.dll",
+        "lib/net8.0/Swashbuckle.AspNetCore.Swagger.pdb",
+        "lib/net8.0/Swashbuckle.AspNetCore.Swagger.xml",
         "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.dll",
         "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.pdb",
         "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.xml",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.Swagger.dll",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.Swagger.pdb",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.Swagger.xml",
-        "swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+        "package-readme.md",
+        "swashbuckle.aspnetcore.swagger.6.7.3.nupkg.sha512",
         "swashbuckle.aspnetcore.swagger.nuspec"
       ]
     },
-    "Swashbuckle.AspNetCore.SwaggerGen/6.5.0": {
-      "sha512": "Y/qW8Qdg9OEs7V013tt+94OdPxbRdbhcEbw4NiwGvf4YBcfhL/y7qp/Mjv/cENsQ2L3NqJ2AOu94weBy/h4KvA==",
+    "Swashbuckle.AspNetCore.SwaggerGen/6.7.3": {
+      "sha512": "kvjGd+g85YFZqyEQZSBUCPtEDDCZsiPPYcjgBN6si3C3oik2c9d7Zlq4PIm07pgY/QmBMgyFOVEzHbks6a398w==",
       "type": "package",
-      "path": "swashbuckle.aspnetcore.swaggergen/6.5.0",
+      "path": "swashbuckle.aspnetcore.swaggergen/6.7.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1936,20 +2007,24 @@
         "lib/net7.0/Swashbuckle.AspNetCore.SwaggerGen.dll",
         "lib/net7.0/Swashbuckle.AspNetCore.SwaggerGen.pdb",
         "lib/net7.0/Swashbuckle.AspNetCore.SwaggerGen.xml",
+        "lib/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll",
+        "lib/net8.0/Swashbuckle.AspNetCore.SwaggerGen.pdb",
+        "lib/net8.0/Swashbuckle.AspNetCore.SwaggerGen.xml",
         "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.dll",
         "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.pdb",
         "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.xml",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerGen.dll",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerGen.pdb",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerGen.xml",
-        "swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+        "package-readme.md",
+        "swashbuckle.aspnetcore.swaggergen.6.7.3.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggergen.nuspec"
       ]
     },
-    "Swashbuckle.AspNetCore.SwaggerUI/6.5.0": {
-      "sha512": "OvbvxX+wL8skxTBttcBsVxdh73Fag4xwqEU2edh4JMn7Ws/xJHnY/JB1e9RoCb6XpDxUF3hD9A0Z1lEUx40Pfw==",
+    "Swashbuckle.AspNetCore.SwaggerUI/6.7.3": {
+      "sha512": "exXUT9h++OU70jTCfQALiHzeBthqL7c5IFQm+aa67Hi/6X945t32NtOMO16TaRn44xFXdqMZ2CyMbgnTmx+w2A==",
       "type": "package",
-      "path": "swashbuckle.aspnetcore.swaggerui/6.5.0",
+      "path": "swashbuckle.aspnetcore.swaggerui/6.7.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1962,13 +2037,17 @@
         "lib/net7.0/Swashbuckle.AspNetCore.SwaggerUI.dll",
         "lib/net7.0/Swashbuckle.AspNetCore.SwaggerUI.pdb",
         "lib/net7.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
+        "lib/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll",
+        "lib/net8.0/Swashbuckle.AspNetCore.SwaggerUI.pdb",
+        "lib/net8.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
         "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.dll",
         "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.pdb",
         "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.dll",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.pdb",
         "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
-        "swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
+        "package-readme.md",
+        "swashbuckle.aspnetcore.swaggerui.6.7.3.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
     },
@@ -2465,14 +2544,21 @@
       "type": "project",
       "path": "../DataAccess/DataAccess.csproj",
       "msbuildProject": "../DataAccess/DataAccess.csproj"
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "BusinessLogic >= 1.0.0",
+      "DataAccess >= 1.0.0",
+      "Mapster >= 7.4.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.33",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.33",
-      "Swashbuckle.AspNetCore >= 6.5.0"
+      "Swashbuckle.AspNetCore >= 6.7.3"
     ]
   },
   "packageFolders": {
@@ -2482,9 +2568,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mvm\\OneDrive\\Рабочий стол\\Учеба\\ларионов\\Study_project\\Cultura\\Cultura\\Cultura.csproj",
-      "projectName": "Cultura",
-      "projectPath": "C:\\Users\\mvm\\OneDrive\\Рабочий стол\\Учеба\\ларионов\\Study_project\\Cultura\\Cultura\\Cultura.csproj",
+      "projectUniqueName": "C:\\Users\\mvm\\OneDrive\\Рабочий стол\\Учеба\\ларионов\\Study_project\\Cultura\\Cultura\\Cultura-Test.csproj",
+      "projectName": "Cultura-Test",
+      "projectPath": "C:\\Users\\mvm\\OneDrive\\Рабочий стол\\Учеба\\ларионов\\Study_project\\Cultura\\Cultura\\Cultura-Test.csproj",
       "packagesPath": "C:\\Users\\mvm\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\mvm\\OneDrive\\Рабочий стол\\Учеба\\ларионов\\Study_project\\Cultura\\Cultura\\obj\\",
       "projectStyle": "PackageReference",
@@ -2510,6 +2596,9 @@
           "projectReferences": {
             "C:\\Users\\mvm\\OneDrive\\Рабочий стол\\Учеба\\ларионов\\Study_project\\Cultura\\BusinessLogic\\BusinessLogic.csproj": {
               "projectPath": "C:\\Users\\mvm\\OneDrive\\Рабочий стол\\Учеба\\ларионов\\Study_project\\Cultura\\BusinessLogic\\BusinessLogic.csproj"
+            },
+            "C:\\Users\\mvm\\OneDrive\\Рабочий стол\\Учеба\\ларионов\\Study_project\\Cultura\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "C:\\Users\\mvm\\OneDrive\\Рабочий стол\\Учеба\\ларионов\\Study_project\\Cultura\\DataAccess\\DataAccess.csproj"
             }
           }
         }
@@ -2524,6 +2613,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Mapster": {
+            "target": "Package",
+            "version": "[7.4.0, )"
+          },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[6.0.33, )"
@@ -2536,7 +2629,7 @@
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
-            "version": "[6.5.0, )"
+            "version": "[6.7.3, )"
           }
         },
         "imports": [
