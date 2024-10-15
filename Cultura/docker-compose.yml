@@ -23,7 +23,7 @@ services:
     # Переменные из docker-compose.yml заменят переменные из Dockerfile,
     # если они присутствуют в образе.
     environment:
-      - ASPNETCORE_URLS=http://+:5000
+      - ASPNETCORE_URLS=http://+:80
       - ASPNETCORE_ENVIRONMENT=Development
       - ConnectionString: "Server=db;Database=Cultura_bd_new1;User Id=AdminLogin;Password=Your_password123!;"",
 
@@ -33,7 +33,7 @@ services:
     # Это делается с помощью 'ports' в формате: [порт компьютера]:[порт контейнера].
     # Здесь связываем порт 5000 на компьютере с портом 80 в контейнере.
     ports:
-      - "5000:5000"
+      - "5000:80"
     depends_on:
       - db
   db:
