@@ -25,7 +25,7 @@ services:
     environment:
       - ASPNETCORE_URLS=http://+:5000
       - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionString=Server=webapi;Database=MyTest;User=AdminLogin;Password=Your_password123!;MultipleActiveResultSets=true",
+      - ConnectionString: "Server=db;Database=Cultura_bd_new1;User Id=AdminLogin;Password=Your_password123!;"",
 
     # Сервер настроен на использование порта 80.
     # Чтобы обращаться к нему с компьютера вне контейнера,
