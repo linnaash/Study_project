@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Cultura-Test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+31f96a2913ffe9cac86772689956aaf6ab9c3439")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+84188f7e47adb002a8497e61ae4b87887f68d8bc")]
 [assembly: System.Reflection.AssemblyProductAttribute("Cultura-Test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cultura-Test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
