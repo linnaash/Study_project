@@ -1,4 +1,4 @@
-version: '3.4'
+version: '3.9' 
 
 services:
   webapi:
@@ -51,7 +51,7 @@ services:
       - ./mattermost-data:/mattermost/data
 
   osu-web:
-    image: ghcr.io/ppy/osu-web:latest
+    image: ghcr.io/ppy/osu-web:stable
     restart: always
     environment:
       APP_URL: 'http://osu.example.com'
