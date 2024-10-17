@@ -9,7 +9,11 @@ services:
     environment:
       - ASPNETCORE_URLS=http://+:5000
       - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionString="Server=db;Database=Cultura_bd_new1;User Id=AdminLogin;Password=Your_password123!;"
+      - ConnectionString=Server=db;Database=Cultura_bd_new1;User Id=AdminLogin;Password=Your_password123!;"
+      "ConnectionStrings": {
+  "DefaultConnection": "Server=db;Database=Cultura_bd_new1;User Id=AdminLogin;Password=12345;"
+}
+
     ports:
       - "5000:5000"
     depends_on:
@@ -18,7 +22,7 @@ services:
   db:
     image: "mcr.microsoft.com/mssql/server"
     environment:
-      - "SA_PASSWORD=Your_password123"
+      - "SA_PASSWORD=12345"
       - "ACCEPT_EULA=Y"
     container_name: mssql
    
