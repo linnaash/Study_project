@@ -1,42 +1,20 @@
 version: '3.4'
-# В docker-compose описываются сервисы.
-# Каждый сервис - это отдельный контейнер.
-# Например, сервисом может быть клиент, сервер или база данных.
-# Описание сервисов начинается с ключевого слова 'services'.
-services:
 
-  # Здесь разворачиваем серверное приложение и базу данных.
-  # Для этого нужно создать два сервиса.
-  # Первый сервис (контейнер) — это сервер.
-  # Имя сервиса можно выбрать любое, но лучше использовать понятное название.
-  # В данном случае используем название 'webapi' для сервера.
+services:
   webapi:
     image: ${DOCKER_REGISTRY-}webapi
-
-    # С помощью ключевого слова "build" указываем
-    # путь к файлу Dockerfile, который будет использован для создания образа.
-    # В данном случае '.' указывает на папку, где находится Dockerfile.
     build:
       context: .
       dockerfile: ./Dockerfile
-
-    # Ключевое слово "environment" позволяет задать переменные окружения.
-    # Переменные из docker-compose.yml заменят переменные из Dockerfile,
-    # если они присутствуют в образе.
     environment:
       - ASPNETCORE_URLS=http://+:80
       - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionString: "Server=db;Database=Cultura_bd_new1;User Id=AdminLogin;Password=Your_password123!;"",
-
-    # Сервер настроен на использование порта 80.
-    # Чтобы обращаться к нему с компьютера вне контейнера,
-    # нужно настроить проброс порта.
-    # Это делается с помощью 'ports' в формате: [порт компьютера]:[порт контейнера].
-    # Здесь связываем порт 5000 на компьютере с портом 80 в контейнере.
+      - ConnectionString="Server=db;Database=Cultura_bd_new1;User Id=AdminLogin;Password=Your_password123!;"
     ports:
       - "5000:80"
     depends_on:
       - db
+
   db:
     image: "mcr.microsoft.com/mssql/server"
     environment:
@@ -44,4 +22,40 @@ services:
       - "ACCEPT_EULA=Y"
     container_name: mssql
     ports:
-      - "1433:1433"  # Пробрасываем порт SQL Server
+      - "1433:1433"
+
+  gitlab:
+    image: gitlab/gitlab-ee:latest
+    restart: always
+    hostname: 'gitlab.example.com'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://gitlab.example.com'
+    ports:
+      - '8080:80'
+      - '443:443'
+      - '22:22'
+    volumes:
+      - ./gitlab-config:/etc/gitlab
+      - ./gitlab-data:/var/opt/gitlab
+      - ./gitlab-logs:/var/log/gitlab
+
+  mattermost:
+    image: mattermost/mattermost-team-edition:latest
+    restart: always
+    environment:
+      MM_SERVICESETTINGS_SITEURL: 'http://mattermost.example.com'
+    ports:
+      - '8065:8065'
+    volumes:
+      - ./mattermost-data:/mattermost/data
+
+  osu-web:
+    image: ghcr.io/ppy/osu-web:latest
+    restart: always
+    environment:
+      APP_URL: 'http://osu.example.com'
+    ports:
+      - '8000:8000'
+    volumes:
+      - ./osu-data:/osu-web/data
