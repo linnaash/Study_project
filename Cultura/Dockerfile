@@ -17,7 +17,9 @@ WORKDIR /app
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 
 #устанавливаем рабочую папку, где будет происходить сборка проекта
-WORKDIR /Cultura
+WORKDIR /app
+# было /Cultura
+
 
 # перемещаем конфигурационные файлы проекта в данный образ
 COPY ["Cultura/Cultura-Test.csproj", "Cultura/"]

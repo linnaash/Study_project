@@ -18,8 +18,7 @@ namespace Cultura
             // Add services to the container.
 
             builder.Services.AddDbContext<Cultura_bdContext>(options =>
-            options.UseSqlServer(
-         "Server=DESKTOP-HD64L82;Database=Cultura_bd_new1;User Id=AdminLogin;Password=12345;",
+            options.UseSqlServer(builder.Configuration["ConnectionString"],
          b => b.MigrationsAssembly("DataAccess")));
 
 
@@ -57,7 +56,16 @@ namespace Cultura
              options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
             });
 
+
+            
             var app = builder.Build();
+
+            using(var scope = app.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                var context=services.GetRequiredService<Cultura_bdContext>();
+                context.Database.Migrate();
+            }
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
