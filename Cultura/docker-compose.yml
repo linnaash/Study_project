@@ -9,7 +9,11 @@ services:
     environment:
       - ASPNETCORE_URLS=http://+:80
       - ASPNETCORE_ENVIRONMENT=Development
+<<<<<<< HEAD
     ports:
+=======
+         ports:
+>>>>>>> 650e2d039b2b8851f1f8132a72c5d2660b2066c1
       - "5000:80"
     depends_on:
       - db
