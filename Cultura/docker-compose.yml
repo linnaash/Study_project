@@ -36,11 +36,11 @@ services:
       - "8080:80"
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
-      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=osu;User Id=sa;Password=YourPassword123;
+      - ConnectionStrings__DefaultConnection=Server=sql1;Database=osu;User Id=sa;Password=StrongPassword123!;
     depends_on:
       - sqlserver
 
-  sqlserver:
+  sql1:
     image: mcr.microsoft.com/mssql/server:2019-latest
     environment:
       - ACCEPT_EULA=Y
