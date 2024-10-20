@@ -1,0 +1,58 @@
+version: '4.3'
+
+services:
+  gitlab:
+    image: gitlab/gitlab-ee:latest
+    hostname: 'gitlab.example.com'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://gitlab.example.com'
+    ports:
+      - '8929:80'
+      - '2222:22'
+    volumes:
+      - gitlab-data:/var/opt/gitlab
+      - gitlab-logs:/var/log/gitlab
+      - gitlab-config:/etc/gitlab
+
+  mattermost:
+    image: mattermost/mattermost-team-edition:latest
+    environment:
+      DB_TYPE: sqlserver
+      MM_SQLSETTINGS_DRIVERNAME: sqlserver
+      MM_SQLSETTINGS_DATASOURCE: mattermost:mattermost_password@tcp(sqlserver:1433)/mattermost?charset=utf8mb4,utf8
+    ports:
+      - '8065:8065'
+    volumes:
+      - mattermost-data:/mattermost/data
+    depends_on:
+      - sqlserver
+
+  osu-web:
+    build:
+      context: . 
+      dockerfile: Dockerfile 
+    ports:
+      - "8080:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=osu;User Id=sa;Password=YourPassword123;
+    depends_on:
+      - sqlserver
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=StrongPassword123!
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver-data:/var/opt/mssql
+
+volumes:
+  gitlab-data:
+  gitlab-logs:
+  gitlab-config:
+  mattermost-data:
+  sqlserver-data:

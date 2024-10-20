@@ -17,9 +17,11 @@ namespace Cultura
 
             // Add services to the container.
 
-            builder.Services.AddDbContext<Cultura_bdContext>(options =>
-     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
-     b => b.MigrationsAssembly("DataAccess")));
+            builder.Services.AddDbContext<Cultura_bdContext>(optionsAction: options =>
+    options.UseSqlServer(connectionString:
+        "Server=DESKTOP-HD64L82;Database=Cultura_bd_new1;User Id=AdminLogin;Password=12345;",
+        b => b.MigrationsAssembly("DataAccess")));
+
 
 
 
