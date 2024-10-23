@@ -1,6 +1,25 @@
-version: '4.3'
-
 services:
+  webapi:
+    image: ${DOCKER_REGISTRY-}webapi
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      - ASPNETCORE_URLS=http://5000
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionString=Server=sql2;Database=MyTest;User=SA;Password=StrongPassword123!;MuiltipleActiveResult=true
+    ports:
+      - "5000:80"
+    depends_on:
+      - db
+
+  db:
+    image: "mcr.microsoft.com/mssql/server"
+    environment:
+      - "MSSQL_SA_PASSWORD=StrongPassword123!"
+      - "ACCEPT_EULA=Y"
+    container_name: sql2
+
   gitlab:
     image: gitlab/gitlab-ee:latest
     hostname: 'gitlab.example.com'
@@ -14,45 +33,31 @@ services:
       - gitlab-data:/var/opt/gitlab
       - gitlab-logs:/var/log/gitlab
       - gitlab-config:/etc/gitlab
+    depends_on:
+      - db
 
   mattermost:
     image: mattermost/mattermost-team-edition:latest
-    environment:
-      DB_TYPE: sqlserver
-      MM_SQLSETTINGS_DRIVERNAME: sqlserver
-      MM_SQLSETTINGS_DATASOURCE: mattermost:mattermost_password@tcp(sqlserver:1433)/mattermost?charset=utf8mb4,utf8
     ports:
       - '8065:8065'
     volumes:
       - mattermost-data:/mattermost/data
     depends_on:
-      - sqlserver
+      - db
 
   osu-web:
     build:
-      context: . 
-      dockerfile: Dockerfile 
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "8080:80"
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
-      - ConnectionStrings__DefaultConnection=Server=sql1;Database=osu;User Id=sa;Password=StrongPassword123!;
     depends_on:
-      - sqlserver
-
-  sql1:
-    image: mcr.microsoft.com/mssql/server:2022-latest
-    environment:
-      - ACCEPT_EULA=Y
-      - MSSQL_SA_PASSWORD=StrongPassword123!
-    ports:
-      - "1433:1433"
-    volumes:
-      - sqlserver-data:/var/opt/mssql
+      - db 
 
 volumes:
   gitlab-data:
   gitlab-logs:
   gitlab-config:
   mattermost-data:
-  sqlserver-data:
