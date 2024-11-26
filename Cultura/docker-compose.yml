@@ -1,0 +1,63 @@
+services:
+  webapi:
+    image: ${DOCKER_REGISTRY-}webapi
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      - ASPNETCORE_URLS=http://5000
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionString=Server=sql2;Database=MyTest;User=SA;Password=StrongPassword123!;MuiltipleActiveResult=true
+    ports:
+      - "5000:80"
+    depends_on:
+      - db
+
+  db:
+    image: "mcr.microsoft.com/mssql/server"
+    environment:
+      - "MSSQL_SA_PASSWORD=StrongPassword123!"
+      - "ACCEPT_EULA=Y"
+    container_name: sql2
+
+  gitlab:
+    image: gitlab/gitlab-ee:latest
+    hostname: 'gitlab.example.com'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://gitlab.example.com'
+    ports:
+      - '8929:80'
+      - '2222:22'
+    volumes:
+      - gitlab-data:/var/opt/gitlab
+      - gitlab-logs:/var/log/gitlab
+      - gitlab-config:/etc/gitlab
+    depends_on:
+      - db
+
+  mattermost:
+    image: mattermost/mattermost-team-edition:latest
+    ports:
+      - '8065:8065'
+    volumes:
+      - mattermost-data:/mattermost/data
+    depends_on:
+      - db
+
+  osu-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+    depends_on:
+      - db 
+
+volumes:
+  gitlab-data:
+  gitlab-logs:
+  gitlab-config:
+  mattermost-data:

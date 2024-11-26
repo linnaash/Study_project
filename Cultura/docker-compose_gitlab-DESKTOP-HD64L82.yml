@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  gitlab:
+    image: gitlab/gitlab-ee:latest
+    hostname: 'gitlab.example.com'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://gitlab.example.com'
+    ports:
+      - '8929:80'
+      - '2222:22'
+    volumes:
+      - gitlab-data:/var/opt/gitlab
+      - gitlab-logs:/var/log/gitlab
+      - gitlab-config:/etc/gitlab
+
+  mattermost:
+    image: mattermost/mattermost-team-edition:latest
+    environment:
+      DB_TYPE: mysql
+      MM_SQLSETTINGS_DRIVERNAME: mysql
+      MM_SQLSETTINGS_DATASOURCE: mattermost:mattermost_password@tcp(db:3306)/mattermost?charset=utf8mb4,utf8
+    ports:
+      - '8065:8065'
+    volumes:
+      - mattermost-data:/mattermost/data
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: mattermost_password
+      MYSQL_DATABASE: mattermost
+    volumes:
+      - db-data:/var/lib/mysql
+
+volumes:
+  gitlab-data:
+  gitlab-logs:
+  gitlab-config:
+  mattermost-data:
+  db-data:

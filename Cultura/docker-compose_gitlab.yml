@@ -1,0 +1,37 @@
+version: '3.8'
+services: 
+  gitlab:
+    image: gitlab/gitlab-ee:latest
+    hostname: 'gitlab.example.com'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://gitlab.example.com'
+    ports:
+      - '8929:80'
+      - '2222:22'
+    volumes:
+      - gitlab-data:/var/opt/gitlab
+      - gitlab-logs:/var/log/gitlab
+      - gitlab-config:/etc/gitlab
+
+  mattermost:
+    image: mattermost/mattermost-team-edition:latest
+    ports:
+      - '8065:8065'
+    volumes:
+      - mattermost-data:/mattermost/data
+
+  osu-web:
+    build:
+      context: .
+      dockerfile: Dockerfile 
+    ports:
+      - "8080:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+
+volumes:
+  gitlab-data:
+  gitlab-logs:
+  gitlab-config:
+  mattermost-data:

@@ -1,0 +1,57 @@
+version: '3'
+services:
+  gitlab:
+    image: gitlab/gitlab-ce:latest
+    container_name: gitlab_service
+    restart: always
+    hostname: 'gitlab.local'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://gitlab.local'
+    ports:
+      - "8081:80"
+      - "8443:443"
+      - "2222:22"
+    volumes:
+      - gitlab-config:/etc/gitlab
+      - gitlab-logs:/var/log/gitlab
+      - gitlab-data:/var/opt/gitlab
+    networks:
+      - my_network
+
+  mattermost:
+    image: mattermost/mattermost-enterprise-edition:latest
+    container_name: mattermost_service
+    restart: always
+    ports:
+      - "8065:8065"
+    environment:
+      - MM_USERNAME=admin
+      - MM_PASSWORD=admin_password
+    volumes:
+      - mattermost-data:/mattermost/data
+    networks:
+      - my_network
+
+  osu-web:
+    image: peppy/osu-web
+    container_name: osu_web_service
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      - APP_ENV=production
+    volumes:
+      - osu-web-data:/app
+    networks:
+      - my_network
+
+networks:
+  my_network:
+
+volumes:
+  gitlab-config:
+  gitlab-logs:
+  gitlab-data:
+  mattermost-data:
+  osu-web-data:
