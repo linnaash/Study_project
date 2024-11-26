@@ -2,5 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Cultura/mattermost-traefik-letsencrypt-docker-compose" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Cultura/osu-web" vcs="Git" />
   </component>
 </project>

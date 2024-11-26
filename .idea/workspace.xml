@@ -4,7 +4,43 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78a19a92-164b-4186-b20a-bb74848ed638" name="Changes" comment="" />
+    <list default="true" id="78a19a92-164b-4186-b20a-bb74848ed638" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Cultura/.vs/Cultura/FileContentIndex/52ed6b93-07f1-4e91-8f4f-3a1971af9b6f.vsidx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cultura/.vs/Cultura/FileContentIndex/56c385ae-7ba9-4763-b10c-d3054d54032e.vsidx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cultura/.vs/Cultura/FileContentIndex/623431d7-6ce8-45ad-9a20-ab8ed66bbbb2.vsidx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cultura/.vs/Cultura/FileContentIndex/68cae34b-c0ff-4ddb-9cb0-6b5499dced60.vsidx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cultura/.vs/Cultura/FileContentIndex/d5ee12ab-505f-455b-9ec1-60168356f776.vsidx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cultura/BusinessLogic/obj/Debug/net6.0/BusinessLogic.sourcelink.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cultura/Cultura/obj/Debug/net6.0/Cultura-Test.sourcelink.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cultura/DataAccess/obj/Debug/net6.0/DataAccess.sourcelink.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Cultura/Domain/obj/Debug/net6.0/Domain.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cultura/.vs/Cultura/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/Cultura/.vs/Cultura/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cultura/.vs/Cultura/v17/.futdcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/Cultura/.vs/Cultura/v17/.futdcache.v2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cultura/.vs/Cultura/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/Cultura/.vs/Cultura/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cultura/.vs/ProjectEvaluation/cultura.metadata.v7.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Cultura/.vs/ProjectEvaluation/cultura.metadata.v7.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cultura/.vs/ProjectEvaluation/cultura.projects.v7.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Cultura/.vs/ProjectEvaluation/cultura.projects.v7.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cultura/BusinessLogic/obj/Debug/net6.0/BusinessLogic.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cultura/BusinessLogic/obj/Debug/net6.0/BusinessLogic.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cultura/BusinessLogic/obj/Debug/net6.0/BusinessLogic.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cultura/BusinessLogic/obj/Debug/net6.0/BusinessLogic.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cultura/BusinessLogic/obj/Debug/net6.0/BusinessLogic.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cultura/BusinessLogic/obj/Debug/net6.0/BusinessLogic.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cultura/BusinessLogic/obj/Debug/net6.0/BusinessLogic.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cultura/BusinessLogic/obj/Debug/net6.0/BusinessLogic.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cultura/Cultura/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Cultura/Cultura/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cultura/Cultura/obj/Debug/net6.0/Cultura-Test.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cultura/Cultura/obj/Debug/net6.0/Cultura-Test.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cultura/Cultura/obj/Debug/net6.0/Cultura-Test.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cultura/Cultura/obj/Debug/net6.0/Cultura-Test.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cultura/Cultura/obj/Debug/net6.0/Cultura-Test.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cultura/Cultura/obj/Debug/net6.0/Cultura-Test.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cultura/Cultura/obj/Debug/net6.0/Cultura-Test.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cultura/Cultura/obj/Debug/net6.0/Cultura-Test.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cultura/Cultura/obj/Debug/net6.0/Cultura-Test.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Cultura/Cultura/obj/Debug/net6.0/Cultura-Test.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cultura/Cultura/obj/Debug/net6.0/Cultura-Test.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Cultura/Cultura/obj/Debug/net6.0/Cultura-Test.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cultura/Cultura/obj/Debug/net6.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Cultura/Cultura/obj/Debug/net6.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cultura/Cultura/obj/Debug/net6.0/refint/Cultura-Test.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Cultura/Cultura/obj/Debug/net6.0/refint/Cultura-Test.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cultura/DataAccess/obj/Debug/net6.0/DataAccess.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cultura/DataAccess/obj/Debug/net6.0/DataAccess.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cultura/DataAccess/obj/Debug/net6.0/DataAccess.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cultura/DataAccess/obj/Debug/net6.0/DataAccess.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cultura/DataAccess/obj/Debug/net6.0/DataAccess.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cultura/DataAccess/obj/Debug/net6.0/DataAccess.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cultura/DataAccess/obj/Debug/net6.0/DataAccess.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cultura/DataAccess/obj/Debug/net6.0/DataAccess.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cultura/Domain/obj/Debug/net6.0/Domain.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cultura/Domain/obj/Debug/net6.0/Domain.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cultura/Domain/obj/Debug/net6.0/Domain.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cultura/Domain/obj/Debug/net6.0/Domain.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cultura/Domain/obj/Debug/net6.0/Domain.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cultura/Domain/obj/Debug/net6.0/Domain.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cultura/docker-compose_sql.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Cultura/docker-compose_sql.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +53,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2lp7PMybvLQzQipjaCV3XGkXi29" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
